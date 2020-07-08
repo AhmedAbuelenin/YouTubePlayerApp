@@ -33,7 +33,7 @@ public class VideoInfo {
         this.videoAuthor = videoAuthor;
     }
 
-    public String getVideoIconRes() {
+    public String getVideoIconResString() {
         return videoIconRes;
     }
 
@@ -41,7 +41,7 @@ public class VideoInfo {
         this.videoIconRes = videoIconRes;
     }
 
-    public int getVideoIconResource(Context context, String videoIconRes) {
+    public int getVideoIconResId(Context context, String videoIconRes) {
         return context.getResources().getIdentifier(videoIconRes, "drawable",
                 context.getPackageName());
     }
