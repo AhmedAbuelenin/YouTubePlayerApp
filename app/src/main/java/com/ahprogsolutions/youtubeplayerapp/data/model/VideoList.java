@@ -1,4 +1,4 @@
-package com.ahprogsolutions.youtubeplayerapp.data;
+package com.ahprogsolutions.youtubeplayerapp.data.model;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -22,6 +22,7 @@ public class VideoList {
         list.add(new VideoInfo("4m7msadL5iA", "Microsoft for Startups",
                 "img_microsoftforups"));
         mutableLiveData.setValue(list);
+        System.out.println("VideoList size: " + list.size());
         return mutableLiveData;
     }
 

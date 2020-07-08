@@ -1,4 +1,4 @@
-package com.ahprogsolutions.youtubeplayerapp.data;
+package com.ahprogsolutions.youtubeplayerapp.data.model;
 
 import android.content.Context;
 
@@ -7,9 +7,6 @@ public class VideoInfo {
     private String videoId;
     private String videoAuthor;
     private String videoIconRes;
-
-    public VideoInfo() {
-    }
 
     public VideoInfo(String videoId, String videoAuthor, String videoIconRes) {
         this.videoId = videoId;

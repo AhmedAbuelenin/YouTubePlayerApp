@@ -21,10 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
             android:background="@android:color/holo_red_dark"
             android:text="subscribe"
             android:textColor="@android:color/white" />
@@ -36,7 +34,6 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_toEndOf="@+id/channel_icon"
-            android:layout_toRightOf="@+id/channel_icon"
             android:gravity="center_vertical"
             android:text="Channel Name"
             android:textColor="@android:color/black"
@@ -47,7 +44,6 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
             android:contentDescription="icon iv"
             android:src="@mipmap/ic_launcher" />
 
