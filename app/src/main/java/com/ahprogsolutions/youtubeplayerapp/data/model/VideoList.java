@@ -20,7 +20,7 @@ public class VideoList {
         list.add(new VideoInfo("2vn9PlLemwg", "Joma Tech",
                 "img_jomatech"));
         list.add(new VideoInfo("4m7msadL5iA", "Microsoft for Startups",
-                "img_microsoftforups"));
+                "img_microsoftforstartups"));
         mutableLiveData.setValue(list);
         System.out.println("VideoList size: " + list.size());
         return mutableLiveData;
