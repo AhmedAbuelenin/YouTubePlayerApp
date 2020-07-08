@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity
     public void onInitializationSuccess(YouTubePlayer.Provider provider,
                                         YouTubePlayer youTubePlayer, boolean b) {
         System.out.println("on success: ok");
-        youTubePlayer.loadVideo("W4hTJybfU7s");
+        youTubePlayer.loadPlaylist("PLgCYzUzKIBE8M2SMSIEZ6jJepG6qD0ugX");
 
     }
 
