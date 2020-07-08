@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -9,45 +11,52 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerInside"
+        android:scaleType="fitCenter"
         android:src="@drawable/no_thumbnail" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
-        <Button
-            android:id="@+id/subscribe_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginEnd="20dp"
-            android:background="@android:color/holo_red_dark"
-            android:text="subscribe"
-            android:textColor="@android:color/white" />
-
         <TextView
             android:id="@+id/channel_name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
             android:layout_toEndOf="@+id/channel_icon"
             android:gravity="center_vertical"
-            android:text="Channel Name"
+            android:text="@string/channel_name"
             android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            app:cardCornerRadius="5dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true"
+            tools:ignore="RelativeOverlap">
+
+            <Button
+                android:id="@+id/subscribe_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:text="@string/subscribe"
+                android:textColor="@android:color/white" />
+        </androidx.cardview.widget.CardView>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/channel_icon"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="15dp"
             android:contentDescription="icon iv"
             android:src="@mipmap/ic_launcher" />
 
     </RelativeLayout>
-
 
 </LinearLayout>
