@@ -1,7 +1,6 @@
 package com.ahprogsolutions.youtubeplayerapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,44 +9,45 @@ import android.widget.Button;
 import com.ahprogsolutions.youtubeplayerapp.R;
 import com.ahprogsolutions.youtubeplayerapp.api.YouTubeApi;
 import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerFragment;
+import com.google.android.youtube.player.YouTubeThumbnailLoader;
+import com.google.android.youtube.player.YouTubeThumbnailView;
 
 public class HomeActivity extends AppCompatActivity
-        implements YouTubePlayer.OnInitializedListener, View.OnClickListener {
+        implements YouTubeThumbnailView.OnInitializedListener, View.OnClickListener {
 
-    private YouTubePlayerFragment mYouTubePlayerFragment;
-    private Button playBtn;
+    private YouTubeThumbnailView mYouTubeThumbnailView;
+    private Button subscBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         System.out.println("on create: ok");
-        playBtn = findViewById(R.id.play_btn);
-        playBtn.setOnClickListener(this);
-        mYouTubePlayerFragment = (YouTubePlayerFragment) getFragmentManager()
-                .findFragmentById(R.id.youtube_fragment);
+        subscBtn = findViewById(R.id.subscribe_btn);
+        subscBtn.setOnClickListener(this);
 
+        mYouTubeThumbnailView = findViewById(R.id.thumbnailView);
+        mYouTubeThumbnailView.initialize(YouTubeApi.getApiKey(), this);
     }
 
     @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider,
-                                        YouTubePlayer youTubePlayer, boolean b) {
+    public void onInitializationSuccess(YouTubeThumbnailView youTubeThumbnailView,
+                                        YouTubeThumbnailLoader youTubeThumbnailLoader) {
         System.out.println("on success: ok");
-        youTubePlayer.loadPlaylist("PLgCYzUzKIBE8M2SMSIEZ6jJepG6qD0ugX");
-
+        youTubeThumbnailLoader.setVideo("AcUauzCn7RE");
+        // youTubeThumbnailLoader should be released in onDestroyView()
     }
 
     @Override
-    public void onInitializationFailure(YouTubePlayer.Provider provider,
+    public void onInitializationFailure(YouTubeThumbnailView youTubeThumbnailView,
                                         YouTubeInitializationResult youTubeInitializationResult) {
-        System.out.println("on failure: something wrong");
-
+        System.out.println("on failure: something is wrong");
     }
 
     @Override
     public void onClick(View v) {
-        mYouTubePlayerFragment.initialize(YouTubeApi.getApiKey(), this);
+        //for the subscribtion button
     }
+
+
 }
