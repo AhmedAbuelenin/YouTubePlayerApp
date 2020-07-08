@@ -6,11 +6,10 @@ android {
 
     defaultConfig {
         applicationId "com.ahprogsolutions.youtubeplayerapp"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -18,6 +17,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
         }
     }
 }
@@ -29,7 +33,15 @@ dependencies {
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
     //circle imageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-//    implementation 'com.makeramen:roundedimageview:2.3.0'
+    //butterknife
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    def lifecycle_version = "2.2.0"
+    //view-model & live-data
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    //test
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
