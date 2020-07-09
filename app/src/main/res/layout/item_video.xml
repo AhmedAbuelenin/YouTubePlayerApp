@@ -10,7 +10,6 @@
         android:id="@+id/thumbnailView"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/no_thumbnail" />
 
