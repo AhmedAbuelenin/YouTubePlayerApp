@@ -68,7 +68,7 @@ public class HomeFragment extends ListFragment {
         System.out.println("onItemClick started");
         videoViewModel.getAllVideos().observe(this, videoInfos -> {
             onVideoPlayListener.onPlay(videoInfos.get(position).getVideoId());
-            Toast.makeText(getActivity(), "Position: " + position, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getActivity(), "videoId: " + videoInfos.get(position).getVideoId(), Toast.LENGTH_SHORT).show();
         });
     }
 
