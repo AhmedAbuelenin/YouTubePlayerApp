@@ -12,15 +12,15 @@ public class VideoList {
         List<VideoInfo> list = new ArrayList<>();
         MutableLiveData<List<VideoInfo>> mutableLiveData = new MutableLiveData<>();
         list.add(new VideoInfo("xEA9vw8t4Ho", "Coding with Mitch",
-                "img_codingwithmitch"));
+                "img_codingwithmitch", "UCoNZZLhPuuRteu02rh7bzsw"));
         list.add(new VideoInfo("wKFJsrdiGS8", "Coding in Flow",
-                "img_codinginflow"));
+                "img_codinginflow", "UC_Fh8kvtkVPkeihBs42jGcA"));
         list.add(new VideoInfo("WX1rSW74lzo", "HaiTHam Motovlog",
-                "img_haithammotovlog"));
+                "img_haithammotovlog", "UCyV2Li3Thv7Xpfljr6fxFUg"));
         list.add(new VideoInfo("2vn9PlLemwg", "Joma Tech",
-                "img_jomatech"));
+                "img_jomatech", "UCV0qA-eDDICsRR9rPcnG7tw"));
         list.add(new VideoInfo("4m7msadL5iA", "Microsoft for Startups",
-                "img_microsoftforstartups"));
+                "img_microsoftforstartups", "microsoftventures"));
         mutableLiveData.setValue(list);
         System.out.println("VideoList size: " + list.size());
         return mutableLiveData;

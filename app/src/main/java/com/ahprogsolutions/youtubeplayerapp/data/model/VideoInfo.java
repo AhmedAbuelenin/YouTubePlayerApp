@@ -7,8 +7,9 @@ public class VideoInfo {
     private String videoId;
     private String videoAuthor;
     private String videoIconRes;
+    private String channelId;
 
-    public VideoInfo(String videoId, String videoAuthor, String videoIconRes) {
+        public VideoInfo(String videoId, String videoAuthor, String videoIconRes, String channelId) {
         this.videoId = videoId;
         this.videoAuthor = videoAuthor;
         this.videoIconRes = videoIconRes;
@@ -36,6 +37,14 @@ public class VideoInfo {
 
     public void setVideoIconRes(String videoIconRes) {
         this.videoIconRes = videoIconRes;
+    }
+
+    public String getChannelId() {
+        return channelId;
+    }
+
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
     }
 
     public int getVideoIconResId(Context context, String videoIconRes) {

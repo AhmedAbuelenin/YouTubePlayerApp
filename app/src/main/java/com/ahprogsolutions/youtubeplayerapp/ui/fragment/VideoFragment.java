@@ -9,12 +9,10 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerFragment;
 
 public class VideoFragment extends YouTubePlayerFragment
-        implements YouTubePlayer.OnInitializedListener,
-        YouTubePlayer.OnFullscreenListener {
+        implements YouTubePlayer.OnInitializedListener {
 
     private YouTubePlayer player;
     private String videoId;
-    private OnPlayerFullScreenListener onPlayerFullScreenListener;
 
     public VideoFragment() {
 
@@ -31,7 +29,7 @@ public class VideoFragment extends YouTubePlayerFragment
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player,
                                         boolean restored) {
         this.player = player;
-        System.out.println("video Fragment: Initializated Successful");
+        System.out.println("video Fragment: Initialized Successful");
         player.addFullscreenControlFlag(YouTubePlayer.FULLSCREEN_FLAG_CUSTOM_LAYOUT);
         if (!restored && videoId != null) {
             player.cueVideo(videoId);
@@ -44,13 +42,7 @@ public class VideoFragment extends YouTubePlayerFragment
 
     }
 
-    @Override
-    public void onFullscreen(boolean status) {
-        System.out.println("onFullScreenListener: " + status);
-        onPlayerFullScreenListener.onPlayerFullScreen(status);
-    }
-
-    public void setVideoId(String videoId) {
+      public void setVideoId(String videoId) {
         if (videoId != null && !videoId.equals(this.videoId)) {
             this.videoId = videoId;
             if (player != null) {
@@ -72,14 +64,6 @@ public class VideoFragment extends YouTubePlayerFragment
             player.release();
         }
         super.onDestroy();
-    }
-
-    public void setOnPlayerFullScreenListener(OnPlayerFullScreenListener onPlayerFullScreenListener) {
-        this.onPlayerFullScreenListener = onPlayerFullScreenListener;
-    }
-
-    public interface OnPlayerFullScreenListener {
-        void onPlayerFullScreen(boolean status);
     }
 
 

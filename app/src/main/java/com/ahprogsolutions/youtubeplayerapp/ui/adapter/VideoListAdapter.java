@@ -1,17 +1,22 @@
 package com.ahprogsolutions.youtubeplayerapp.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.ahprogsolutions.youtubeplayerapp.R;
 import com.ahprogsolutions.youtubeplayerapp.data.model.VideoInfo;
 import com.ahprogsolutions.youtubeplayerapp.data.api.YouTubeApi;
+import com.google.android.youtube.player.YouTubeIntents;
 import com.google.android.youtube.player.YouTubeThumbnailLoader;
 import com.google.android.youtube.player.YouTubeThumbnailView;
+
 import java.util.List;
 import java.util.Map;
 
