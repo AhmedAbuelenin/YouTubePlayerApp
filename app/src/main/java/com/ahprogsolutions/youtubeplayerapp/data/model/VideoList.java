@@ -16,7 +16,7 @@ public class VideoList {
         list.add(new VideoInfo("wKFJsrdiGS8", "Coding in Flow",
                 "img_codinginflow"));
         list.add(new VideoInfo("WX1rSW74lzo", "HaiTHam Motovlog",
-                "img_haitammotovlog"));
+                "img_haithammotovlog"));
         list.add(new VideoInfo("2vn9PlLemwg", "Joma Tech",
                 "img_jomatech"));
         list.add(new VideoInfo("4m7msadL5iA", "Microsoft for Startups",

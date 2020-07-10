@@ -13,6 +13,7 @@ import androidx.fragment.app.ListFragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.ahprogsolutions.youtubeplayerapp.R;
+import com.ahprogsolutions.youtubeplayerapp.ui.activity.HomeActivity;
 import com.ahprogsolutions.youtubeplayerapp.ui.activity.OnVideoPlayListener;
 import com.ahprogsolutions.youtubeplayerapp.ui.adapter.VideoListAdapter;
 import com.ahprogsolutions.youtubeplayerapp.ui.viewmodel.VideoViewModel;
@@ -23,7 +24,6 @@ import butterknife.Unbinder;
 
 public class HomeFragment extends ListFragment {
 
-
     @BindView(android.R.id.list)
     ListView videoListView;
     private Unbinder unbinder;
@@ -31,8 +31,7 @@ public class HomeFragment extends ListFragment {
     private VideoListAdapter videoListAdapter;
     private OnVideoPlayListener onVideoPlayListener;
 
-    public HomeFragment(OnVideoPlayListener onVideoPlayListener) {
-        this.onVideoPlayListener = onVideoPlayListener;
+    public HomeFragment() {
     }
 
     @Override
@@ -68,8 +67,11 @@ public class HomeFragment extends ListFragment {
         System.out.println("onItemClick started");
         videoViewModel.getAllVideos().observe(this, videoInfos -> {
             onVideoPlayListener.onPlay(videoInfos.get(position).getVideoId());
-//            Toast.makeText(getActivity(), "videoId: " + videoInfos.get(position).getVideoId(), Toast.LENGTH_SHORT).show();
         });
+    }
+
+    public void setOnVideoPlayListener(OnVideoPlayListener onVideoPlayListener) {
+        this.onVideoPlayListener = onVideoPlayListener;
     }
 
     @Override
