@@ -74,6 +74,18 @@ public class VideoListAdapter extends BaseAdapter {
         channelName.setText(info.getVideoAuthor());
         ImageView channelIcon = (ImageView) view.findViewById(R.id.channel_icon);
         channelIcon.setImageResource(info.getVideoIconResId(context, info.getVideoIconResString()));
+        Button subscBtn = (Button) view.findViewById(R.id.subscribe_btn);
+        subscBtn.setOnClickListener(v -> {
+            Intent intent;
+            String channelId = info.getChannelId();
+            if (channelId.equals("microsoftventures")) {
+                intent = YouTubeIntents.createUserIntent(context, channelId);
+            } else{
+                intent = YouTubeIntents.createChannelIntent(context, channelId);
+            }
+            System.out.println("channelId: " + channelId);
+            context.startActivity(intent);
+        });
         return view;
     }
 

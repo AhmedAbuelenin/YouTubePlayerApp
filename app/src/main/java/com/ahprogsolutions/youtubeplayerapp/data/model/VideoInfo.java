@@ -13,6 +13,7 @@ public class VideoInfo {
         this.videoId = videoId;
         this.videoAuthor = videoAuthor;
         this.videoIconRes = videoIconRes;
+        this.channelId = channelId;
     }
 
     public String getVideoId() {

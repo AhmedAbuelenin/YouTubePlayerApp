@@ -22,7 +22,7 @@ public class VideoList {
         list.add(new VideoInfo("4m7msadL5iA", "Microsoft for Startups",
                 "img_microsoftforstartups", "microsoftventures"));
         mutableLiveData.setValue(list);
-        System.out.println("VideoList size: " + list.size());
+        System.out.println("VideoList size: " + list.get(0));
         return mutableLiveData;
     }
 
